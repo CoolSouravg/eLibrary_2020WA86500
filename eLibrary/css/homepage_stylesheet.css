@@ -1,0 +1,100 @@
+﻿/* General styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+section {
+    margin-bottom: 40px; /* Space between sections */
+}
+
+.center-content {
+    text-align: center;
+}
+
+img {
+    max-width: 100%; /* Responsive images */
+    height: auto;
+}
+
+/* Image styling */
+.img-fluid {
+    border: 2px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow effect */
+    opacity: 0.9; /* Slightly transparent */
+    filter: brightness(90%) contrast(110%) grayscale(20%);
+    transition: transform 0.3s ease;
+}
+
+    .img-fluid:hover {
+        transform: scale(1.02); /* Slight zoom effect */
+    }
+
+/* Image overlay effect */
+.image-overlay {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ensure the overlay doesn't extend beyond the image */
+}
+
+    .image-overlay .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3); /* Dark overlay with transparency */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-overlay:hover .overlay {
+        opacity: 1;
+    }
+
+/* Card styling */
+.feature-card, .process-card {
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px 0; /* Margin around each card */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    background-color: #fff; /* Ensure card background is white */
+}
+
+    .feature-card img, .process-card img {
+        max-width: 120px; /* Smaller image size */
+        margin-bottom: 10px;
+    }
+
+/* Grid and responsive layout */
+.container {
+    padding-left: 15px; /* Add padding to the container */
+    padding-right: 15px; /* Add padding to the container */
+}
+
+.row {
+    margin-left: -15px; /* Adjust margin to counteract container padding */
+    margin-right: -15px; /* Adjust margin to counteract container padding */
+}
+
+.col-md-4 {
+    padding-left: 15px; /* Add padding for column spacing */
+    padding-right: 15px; /* Add padding for column spacing */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .col-md-4 {
+        margin-bottom: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .feature-card, .process-card {
+        margin: 10px 0; /* Maintain spacing on smaller screens */
+        width: calc(100% - 20px); /* Full width on smaller screens with margin */
+    }
+}

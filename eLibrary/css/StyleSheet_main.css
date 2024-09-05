@@ -1,0 +1,21 @@
+﻿.footerlinks {
+    color: #ffffff; /* White color for text links */
+    text-decoration: none !important; /* Remove underline */
+}
+
+.footerlinks:hover {
+    color: #00bcd4; /* Bright cyan color on hover */
+}
+
+#footer1 {
+    background: #002b36; /* Dark teal background */
+}
+
+#footer2 {
+    background: #003d4c; /* Slightly lighter teal background */
+}
+
+.footer-text {
+    color: #e0e0e0; /* Light gray color for footer text */
+}
+
