@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <asp:Button CssClass="btn btn-primary btn-custom btn-lg" ID="Button1" runat="server" Text="Update" />
+                            <asp:Button CssClass="btn btn-primary btn-custom btn-lg" ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
                         </div>
                     </div>
                     <div class="card-footer login-footer">

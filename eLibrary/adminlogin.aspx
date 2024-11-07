@@ -50,14 +50,14 @@
                     <div class="card-body">
                         <div class="text-center login-header">
                             <img width="150px" src="imgs/adminuser.png" alt="Admin Image"/>
-                            <h3 class="mt-3">Admin Login</h3>
+                            <h3 class="mt-3">AdAdmin Login</h3>
                         </div>
                         <hr>
                         <asp:TextBox CssClass="form-control mb-3" ID="TextBox1" runat="server" placeholder="Admin ID" />
                         <asp:TextBox CssClass="form-control mb-3" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password" />
-                        <asp:Button CssClass="btn btn-danger btn-block btn-lg btn-custom mb-3" ID="Button1" runat="server" Text="Login" />
+                        <asp:Button CssClass="btn btn-danger btn-block btn-lg btn-custom mb-3" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
                         <div class="form-group text-center">
-                            <a href="adminforgotpassword.aspx" class="btn btn-link">Forgot Password?</a>
+                            <a href="adminforgotpassword.aspx" class="btn btn-link">Forgot Password?a>
                         </div>
                     </div>
                     <div class="card-footer login-footer">

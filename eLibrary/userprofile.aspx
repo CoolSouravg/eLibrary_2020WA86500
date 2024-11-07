@@ -1,7 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="eLibrary.userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
+     <script type="text/javascript">
+ $(document).ready(function () {
+     $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+ });
+     </script>
+
+
     <style>
-        /* Custom CSS for the user profile page */
         .profile-header img {
             border-radius: 50%;
             border: 2px solid #007bff;
@@ -42,6 +50,7 @@
             background-color: #0056b3;
             border-color: #004085;
         }
+
 
         .card {
             border-radius: 10px;
@@ -120,6 +129,13 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
+
+        .form-control[readonly] {
+        background-color: #e9ecef; /* Light grey background */
+        color: #6c757d; /* Grey text color */
+        opacity: 1;
+        }
+
 
     </style>
 </asp:Content>
@@ -248,7 +264,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="TextBox9">Old Password</label>
-                                    <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Old Password" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Old Password" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -260,7 +276,7 @@
                         </div>
                         <div class="text-center mb-3">
                             <br />
-                            <asp:Button class="btn btn-primary btn-lg" ID="Button1" runat="server" Text="Update" />
+                            <asp:Button class="btn btn-primary btn-lg" ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
                         </div>
                         <div class="card-footer">
                             <a class="back-link" href="homepage.aspx"><< Back to Home</a>
@@ -281,7 +297,7 @@
                             <asp:Label class="badge badge-pill badge-info" ID="Label2" runat="server" Text="Your books info"></asp:Label>
                         </div>
                         <hr>
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound"></asp:GridView>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="adminpublishermanagement.aspx.cs" Inherits="eLibrary.adminpublishermanagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+     <script type ="text/javascript">
+     $(document).ready(function () {
+         $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+     })
+     </script>
+
         <style>
         /* Custom CSS for adminauthormanagement page */
         
@@ -116,7 +122,7 @@
                             <div class="input-group">
                                 <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
                                 <div class="input-group-append">
-                                    <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Go" />
+                                    <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Go" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>
@@ -131,13 +137,13 @@
 
                     <div class="form-group row">
                         <div class="col">
-                            <asp:Button ID="Button2" CssClass="btn btn-success btn-block" runat="server" Text="Add" />
+                            <asp:Button ID="Button2" CssClass="btn btn-success btn-block" runat="server" Text="Add" OnClick="Button2_Click" />
                         </div>
                         <div class="col">
-                            <asp:Button ID="Button3" CssClass="btn btn-primary btn-block" runat="server" Text="Update" />
+                            <asp:Button ID="Button3" CssClass="btn btn-primary btn-block" runat="server" Text="Update" OnClick="Button3_Click" />
                         </div>
                         <div class="col">
-                            <asp:Button ID="Button4" CssClass="btn btn-danger btn-block" runat="server" Text="Delete" />
+                            <asp:Button ID="Button4" CssClass="btn btn-danger btn-block" runat="server" Text="Delete" OnClick="Button4_Click" />
                         </div>
                     </div>
 
@@ -159,8 +165,13 @@
                 <div class="card-body">
 
                     <hr>
-
-                    <asp:GridView CssClass="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString2 %>" ProviderName="<%$ ConnectionStrings:elibraryDBConnectionString2.ProviderName %>" SelectCommand="SELECT * FROM [publisher_master_tbl]"></asp:SqlDataSource>
+                    <asp:GridView CssClass="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="publisher_id" DataSourceID="SqlDataSource1">
+                        <Columns>
+                            <asp:BoundField DataField="publisher_id" HeaderText="publisher_id" ReadOnly="True" SortExpression="publisher_id" />
+                            <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" />
+                        </Columns>
+                    </asp:GridView>
 
                 </div>
             </div>

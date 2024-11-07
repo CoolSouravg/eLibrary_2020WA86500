@@ -57,7 +57,7 @@
                         <hr>
                         <asp:TextBox CssClass="form-control mb-3" ID="TextBox1" runat="server" placeholder="Member ID" />
                         <asp:TextBox CssClass="form-control mb-3" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password" />
-                        <asp:Button CssClass="btn btn-success btn-block btn-lg btn-custom mb-3" ID="Button1" runat="server" Text="Login" />
+                        <asp:Button CssClass="btn btn-success btn-block btn-lg btn-custom mb-3" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
                         <asp:Button CssClass="btn btn-info btn-block btn-lg btn-custom" ID="Button2" runat="server" Text="Sign Up" PostBackUrl="~/usersignup.aspx" />
                     </div>
                     <div class="card-footer login-footer">
